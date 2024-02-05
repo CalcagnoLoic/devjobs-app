@@ -1,9 +1,7 @@
-import { useParams } from "react-router-dom";
+import Header from "../../components/Header";
 
 const Pages = () => {
-  const { id } = useParams();
-
-  return <h1>Détails du job {`${id}`}</h1>;
+  return <Header />;
 };
 
 export default Pages;

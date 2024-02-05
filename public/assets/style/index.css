@@ -12,3 +12,9 @@
     font-family: kumbhSans;
   }
 }
+
+@layer components {
+  #check-button:checked + .check-button {
+    @apply before:translate-x-[140%] [&:before]:bg-royalBlue;
+  }
+}

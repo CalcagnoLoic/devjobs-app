@@ -1,3 +1,7 @@
-const Pages = () => <h1>Erreur</h1>;
+import Header from "../../components/Header";
+
+const Pages = () => {
+  return <Header />;
+};
 
 export default Pages;

@@ -1,12 +1,11 @@
 import Header from "../../components/Header";
 
 const Pages = () => {
-    return (
-        <>
-            <Header />
-        </>
-    );
-
-}
+  return (
+    <>
+      <Header />
+    </>
+  );
+};
 
 export default Pages;

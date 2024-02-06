@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/job-detail/:id" element={<JobDetails />}></Route>
-        <Route path="*" element={<Error404 />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/job-detail/:id" element={<JobDetails />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>
   </React.StrictMode>,

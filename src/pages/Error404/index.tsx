@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 
-const Pages = () => {
+const Page = () => {
   return <Header />;
 };
 
-export default Pages;
+export default Page;

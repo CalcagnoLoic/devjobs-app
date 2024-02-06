@@ -3,7 +3,7 @@ import ToggleButton from "../ToggleButton";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-patternDesktop rounded-bl-[100px] bg-royalBlue bg-contain bg-no-repeat pb-16 px-[165px] pt-16 flex justify-between items-center">
+    <header className="flex items-center justify-between rounded-bl-[100px] bg-royalBlue bg-patternDesktop bg-contain bg-no-repeat px-[165px] pb-16 pt-16">
       <h1>
         <img src={logo} alt="Devjobs app Logo" />
       </h1>

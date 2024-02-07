@@ -1,11 +1,11 @@
 import Header from "../../components/Header";
+import JobsList from "../../components/JobsList";
 
-const Pages = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
-};
+const Page = () => (
+  <>
+    <Header />
+    <JobsList arrayList={[]} />
+  </>
+);
 
-export default Pages;
+export default Page;

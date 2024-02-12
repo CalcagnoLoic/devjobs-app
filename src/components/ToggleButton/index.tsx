@@ -1,6 +1,6 @@
 import { useRef, KeyboardEventHandler } from "react";
 
-const ToggleButton = () => {
+const Component = () => {
   const checkbox = useRef<HTMLInputElement>(null);
 
   const handleKeydown: KeyboardEventHandler<HTMLLabelElement> = (
@@ -31,4 +31,4 @@ const ToggleButton = () => {
   );
 };
 
-export default ToggleButton;
+export default Component;

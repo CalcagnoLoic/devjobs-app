@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        "kumbh-sans": ["Kumbh Sans", "sans-serif"],
+      },
       colors: {
         royalBlue: "#5964E0",
         portage: "#939BF4",

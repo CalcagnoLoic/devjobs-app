@@ -19,7 +19,7 @@ const Component = ({ jobInformations }: jobInfosProps) => {
           {jobInformations.postedAt} . {jobInformations.contract}
         </p>
         <Link to={`/job-detail/${jobInformations.id}`}>
-          Position: {jobInformations.position}
+          {jobInformations.position}
         </Link>
         <p>{jobInformations.company}</p>
         <p className="location text-royalBlue font-bold">{jobInformations.location}</p>

@@ -1,30 +1,21 @@
-import searchIcon from "../../../public/assets/img/desktop/icon-search.svg";
-import locationIcon from "../../../public/assets/img/desktop/icon-location.svg";
+import FilterIcon from "../../Icon/FilterIcon";
 
 const Component = ({ css }: { css: string }) => {
   return (
     <form action="" className={`flex rounded bg-white px-8 py-3 ${css}`}>
       <div className="flex w-[463px]">
-        <img
-          src={searchIcon}
-          alt="Search Icon"
-          className="mr-4 h-6 w-6 self-center"
-        />
+        <FilterIcon kind="search" />
         <input
           type="text"
           name=""
           id=""
           placeholder="Filter by title, companies, expertise, ..."
-          className="w-full"
+          className="w-3/4 self-center"
         />
       </div>
 
-      <div className="flex border-x-[1px] border-x-athensGray">
-        <img
-          src={locationIcon}
-          alt="Location Icon"
-          className="ml-6 mr-4 h-6 w-4 self-center"
-        />
+      <div className="flex w-[302px] border-x-[1px] border-x-athensGray px-4">
+        <FilterIcon kind="location" />
         <input
           type="text"
           name=""

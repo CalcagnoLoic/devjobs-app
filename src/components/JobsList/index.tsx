@@ -4,16 +4,12 @@ import CardJob from "../CardJob";
 // import Loader from "../Loader";
 import jobsList from "../../data/data.json";
 
-type JobsListProps = {
-  arrayList?: JobOffer[];
-};
-
-const Component = ({ arrayList }: JobsListProps) => {
+const Component = () => {
   // const { isData, isLoading, isError } = useFetch("../../data/data.json");
 
   return (
     <>
-      <ul>
+      <ul className="flex flex-wrap gap-y-10 justify-between">
         {jobsList.map((job: JobOffer) => (
           <CardJob key={job.id} jobInformations={job} />
         ))}

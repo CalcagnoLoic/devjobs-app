@@ -23,21 +23,29 @@ const Component = ({ jobInformations }: jobInfosProps) => {
 
   return (
     <>
-      <li className="min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12 relative">
-        <div style={{ backgroundColor: convertedColor }} className="w-12 h-12 rounded-2xl grid place-content-center absolute top-0 -translate-y-1/2">
+      <li className="relative min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12">
+        <div
+          style={{ backgroundColor: convertedColor }}
+          className="absolute top-0 grid h-12 w-12 -translate-y-1/2 place-content-center rounded-2xl"
+        >
           <img
             src={jobInformations.logo}
             alt={`${jobInformations.company} logo`}
           />
         </div>
-        <p>
-          {jobInformations.postedAt} . {jobInformations.contract}
+        <p className="text-base text-lynch">
+          {jobInformations.postedAt}
+          <span className="mx-3 text-3xl leading-3">.</span>
+          {jobInformations.contract}
         </p>
-        <Link to={`/job-detail/${jobInformations.id}`}>
+        <Link
+          to={`/job-detail/${jobInformations.id}`}
+          className="font-bold mt-4 block text-mirage text-xl"
+        >
           {jobInformations.position}
         </Link>
-        <p>{jobInformations.company}</p>
-        <p className="location font-bold text-royalBlue">
+        <p className="mt-4 text-base text-lynch">{jobInformations.company}</p>
+        <p className="location mt-11 text-sm font-bold text-royalBlue">
           {jobInformations.location}
         </p>
       </li>

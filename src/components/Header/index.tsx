@@ -1,4 +1,4 @@
-import logo from "../../../public/assets/img/desktop/logo.svg";
+import logo from "/assets/img/desktop/logo.svg";
 //import Layout from "../../layout/LayoutContainer";
 import ToggleButton from "../ToggleButton";
 import { Link } from "react-router-dom";
@@ -13,8 +13,6 @@ const Component: React.FC = () => {
           </h1>
         </Link>
 
-
-        
         <div className="flex">
           <ToggleButton />
         </div>

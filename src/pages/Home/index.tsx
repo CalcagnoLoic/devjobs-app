@@ -7,7 +7,7 @@ const Page = () => (
   <div className="bg-athensGray">
     <Header />
     <LayoutContainer kind="large">
-      <Filter css="mb-24" />
+      <Filter css="mb-[105px]" />
       <JobsList />
     </LayoutContainer>
   </div>

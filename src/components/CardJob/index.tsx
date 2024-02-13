@@ -21,14 +21,10 @@ const Component = ({ jobInformations }: jobInfosProps) => {
     }
   }, [jobInformations.logoBackground]);
 
-  console.log("------------");
-  console.log(convertedColor);
-  console.log("------------");
-
   return (
     <>
-      <li className="min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12">
-        <div style={{backgroundColor: convertedColor}}>
+      <li className="min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12 relative">
+        <div style={{ backgroundColor: convertedColor }} className="w-12 h-12 rounded-2xl grid place-content-center absolute top-0 -translate-y-1/2">
           <img
             src={jobInformations.logo}
             alt={`${jobInformations.company} logo`}

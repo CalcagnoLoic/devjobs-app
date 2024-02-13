@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/job-detail/:id" element={<JobDetails />} />
+        <Route path="/job-detail/:JobId" element={<JobDetails />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

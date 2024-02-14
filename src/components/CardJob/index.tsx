@@ -1,25 +1,14 @@
 import { JobOffer } from "../../types/types";
-import { Link } from "react-router-dom";
-import ConvertHSLtoHex from "../../utils/ConvertHSLtoHex";
-import ExtractHSLValue from "../../utils/ExtractHSLValue";
-import { useEffect, useState } from "react";
+import { useConvertedColor } from "../../hooks/useConvertedColor";
+
+import JobInformations from "../JobInformations";
 
 type jobInfosProps = {
   jobInformations: JobOffer;
 };
 
 const Component = ({ jobInformations }: jobInfosProps) => {
-  const [convertedColor, setConvertedColor] = useState<string>("");
-
-  useEffect(() => {
-    const hslValues = ExtractHSLValue(jobInformations.logoBackground);
-
-    if (hslValues) {
-      const { hue, saturation, lightness } = hslValues;
-      const hexColor = ConvertHSLtoHex({ hue, saturation, lightness });
-      setConvertedColor(hexColor);
-    }
-  }, [jobInformations.logoBackground]);
+  const convertedColor = useConvertedColor(jobInformations.logoBackground);
 
   return (
     <>
@@ -33,21 +22,8 @@ const Component = ({ jobInformations }: jobInfosProps) => {
             alt={`${jobInformations.company} logo`}
           />
         </div>
-        <p className="text-base text-lynch">
-          {jobInformations.postedAt}
-          <span className="mx-3 text-3xl leading-3">.</span>
-          {jobInformations.contract}
-        </p>
-        <Link
-          to={`/job-detail/${jobInformations.id}`}
-          className="font-bold mt-4 block text-mirage text-xl"
-        >
-          {jobInformations.position}
-        </Link>
-        <p className="mt-4 text-base text-lynch">{jobInformations.company}</p>
-        <p className="location mt-11 text-sm font-bold text-royalBlue">
-          {jobInformations.location}
-        </p>
+        
+        <JobInformations JobData={jobInformations} />
       </li>
     </>
   );

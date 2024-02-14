@@ -53,7 +53,7 @@ export default {
           "url('/assets/img/desktop/bg-pattern-header.svg')",
         patternTablet: "url('/public/assets/img/tablet/bg-pattern-header.svg')",
         patternMobile: "url('/public/assets/img/mobile/bg-pattern-header.svg')",
-        checkbox: "url('/public/assets/img/desktop/icon-check.svg')",
+        checkbox: "url('/assets/img/desktop/icon-check.svg')",
       },
     },
   },

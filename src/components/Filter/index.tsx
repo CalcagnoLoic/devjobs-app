@@ -32,11 +32,11 @@ const Component = ({ css }: { css: string }) => {
           <input
             type="checkbox"
             id="fullTimeOnly"
-            className="h-[24px] w-[24px] cursor-pointer appearance-none self-center rounded bg-athensGray checked:bg-royalBlue checked:bg-checkbox checked:bg-no-repeat checked:bg-center checked:bg-[length:15px] transition-colors duration-200"
+            className="checked:bg-checkbox h-[24px] w-[24px] cursor-pointer appearance-none self-center rounded bg-athensGray transition-[background, opacity] duration-300 checked:bg-royalBlue checked:bg-[length:15px] checked:bg-center checked:bg-no-repeat hover:bg-royalBlue hover:opacity-25 checked:hover:opacity-100"
           />
           <label
             htmlFor="fullTimeOnly"
-            className="self-center font-bold text-mirage"
+            className="cursor-pointer self-center font-bold text-mirage"
           >
             Full Time Only
           </label>

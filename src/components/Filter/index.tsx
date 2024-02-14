@@ -2,7 +2,10 @@ import FilterIcon from "../../Icon/FilterIcon";
 
 const Component = ({ css }: { css: string }) => {
   return (
-    <form action="" className={`flex rounded bg-white px-8 py-3 ${css}`}>
+    <form
+      action=""
+      className={`flex justify-end rounded bg-white py-4 pl-8 pr-4 ${css}`}
+    >
       <div className="flex w-[463px]">
         <FilterIcon kind="search" />
         <input
@@ -10,7 +13,7 @@ const Component = ({ css }: { css: string }) => {
           name=""
           id=""
           placeholder="Filter by title, companies, expertise, ..."
-          className="w-3/4 self-center"
+          className="h-full w-3/4 self-center"
         />
       </div>
 
@@ -24,23 +27,24 @@ const Component = ({ css }: { css: string }) => {
         />
       </div>
 
-      <div className="ml-7 flex w-[345px] gap-3">
-        <div className="flex self-center">
+      <div className="flex w-[345px] justify-end gap-x-7">
+        <div className="flex items-center gap-x-4">
           <input
             type="checkbox"
-            name=""
-            id=""
-            className="mr-4 h-[24px] w-[24px] cursor-pointer appearance-none self-center rounded bg-athensGray"
+            id="fullTimeOnly"
+            className="checked:bg-checkbox h-[24px] w-[24px] cursor-pointer appearance-none self-center rounded bg-athensGray transition-[background, opacity] duration-300 checked:bg-royalBlue checked:bg-[length:15px] checked:bg-center checked:bg-no-repeat hover:bg-royalBlue hover:opacity-25 checked:hover:opacity-100"
           />
-          <label htmlFor="" className="self-center font-bold ">
-            {" "}
-            Full time Only
+          <label
+            htmlFor="fullTimeOnly"
+            className="cursor-pointer self-center font-bold text-mirage"
+          >
+            Full Time Only
           </label>
         </div>
         <input
           type="submit"
           value="Search"
-          className="ml-6 w-[123px] cursor-pointer rounded bg-royalBlue px-8 py-4 font-bold text-white transition duration-300 hover:bg-portage"
+          className="w-[123px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage"
         />
       </div>
     </form>

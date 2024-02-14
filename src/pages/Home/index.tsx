@@ -6,8 +6,8 @@ import Filter from "../../components/Filter";
 const Page = () => (
   <div className="bg-athensGray">
     <Header />
-    <LayoutContainer kind="large">
-      <Filter css="mb-24" />
+    <LayoutContainer width="large" css="mx-auto -my-10">
+      <Filter css="mb-[105px]" />
       <JobsList />
     </LayoutContainer>
   </div>

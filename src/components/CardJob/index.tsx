@@ -1,45 +1,35 @@
 import { JobOffer } from "../../types/types";
-import { Link } from "react-router-dom";
-import ConvertHSLtoHex from "../../utils/ConvertHSLtoHex";
-import ExtractHSLValue from "../../utils/ExtractHSLValue";
-import { useEffect, useState } from "react";
+import { useConvertedColor } from "../../hooks/useConvertedColor";
+
+import JobInformations from "../JobInformations";
 
 type jobInfosProps = {
   jobInformations: JobOffer;
 };
 
 const Component = ({ jobInformations }: jobInfosProps) => {
-  const [convertedColor, setConvertedColor] = useState<string>("");
-
-  useEffect(() => {
-    const hslValues = ExtractHSLValue(jobInformations.logoBackground);
-
-    if (hslValues) {
-      const { hue, saturation, lightness } = hslValues;
-      const hexColor = ConvertHSLtoHex({ hue, saturation, lightness });
-      setConvertedColor(hexColor);
-    }
-  }, [jobInformations.logoBackground]);
+  const convertedColor = useConvertedColor(jobInformations.logoBackground);
 
   return (
     <>
-      <li className="min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12 relative">
-        <div style={{ backgroundColor: convertedColor }} className="w-12 h-12 rounded-2xl grid place-content-center absolute top-0 -translate-y-1/2">
+      <li className="relative min-w-[350px] rounded-md bg-white px-8 pb-9 pt-12">
+        <div
+          style={{ backgroundColor: convertedColor }}
+          className="absolute top-0 grid h-12 w-12 -translate-y-1/2 place-content-center rounded-2xl"
+        >
           <img
             src={jobInformations.logo}
             alt={`${jobInformations.company} logo`}
           />
         </div>
-        <p>
-          {jobInformations.postedAt} . {jobInformations.contract}
-        </p>
-        <Link to={`/job-detail/${jobInformations.id}`}>
-          {jobInformations.position}
-        </Link>
-        <p>{jobInformations.company}</p>
-        <p className="location font-bold text-royalBlue">
-          {jobInformations.location}
-        </p>
+
+        <JobInformations
+          JobData={jobInformations}
+          styleLocation="mt-11 text-sm"
+          css="mt-4 text-base text-lynch"
+          isRedirect={true}
+          isCompanyName={true}
+        />
       </li>
     </>
   );

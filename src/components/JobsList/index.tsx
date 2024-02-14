@@ -9,7 +9,7 @@ const Component = () => {
 
   return (
     <>
-      <ul className="flex flex-wrap gap-y-10 justify-between">
+      <ul className="flex flex-wrap gap-y-16 justify-between">
         {jobsList.map((job: JobOffer) => (
           <CardJob key={job.id} jobInformations={job} />
         ))}

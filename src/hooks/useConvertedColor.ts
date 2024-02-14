@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
-import ConvertHSLtoHex from "../utils/ConvertHSLtoHex";
-import ExtractHSLValue from "../utils/ExtractHSLValue";
+import convertHSLtoHex from "../utils/convertHSLtoHex";
+import extractHSLValue from "../utils/extractHSLValue";
 
 export const useConvertedColor = (hexValue: string) => {
   const [convertedColor, setConvertedColor] = useState<string>("");
 
   useEffect(() => {
-    const hslValues = ExtractHSLValue(hexValue);
+    const hslValues = extractHSLValue(hexValue);
 
     if (hslValues) {
       const { hue, saturation, lightness } = hslValues;
-      const hexColor = ConvertHSLtoHex({ hue, saturation, lightness });
+      const hexColor = convertHSLtoHex({ hue, saturation, lightness });
       setConvertedColor(hexColor);
     }
   }, []);

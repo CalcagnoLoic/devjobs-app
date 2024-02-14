@@ -1,4 +1,6 @@
 import { JobOffer } from "../../types/types";
+
+import Button from "../Button";
 import JobCharacteristic from "../JobCharacteristic";
 import JobInformations from "../JobInformations";
 
@@ -6,21 +8,35 @@ const Component = ({ datas }: { datas: JobOffer }) => {
   return (
     <div className="mt-6 bg-white p-12">
       <div className="flex justify-between">
-        <JobInformations JobData={datas} />
+        <JobInformations
+          JobData={datas}
+          styleLocation="mt-2"
+          css="mt-2 block text-3xl font-bold text-mirage"
+          isRedirect={false}
+          isCompanyName={false}
+        />
 
-
-        <div className="cursor-pointer self-center rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage">
-          <a href={datas?.apply} target="_blank">
-            Apply Now
-          </a>
-        </div>
+        <Button
+          TagName="a"
+          href={datas?.apply}
+          children="Apply Now"
+          css="self-center"
+        />
       </div>
 
       <p className="mt-12 leading-7 text-lynch">{datas?.description}</p>
 
-      <JobCharacteristic content="Requirements" jobData={datas} listStyle="list-disc" />
+      <JobCharacteristic
+        content="Requirements"
+        jobData={datas}
+        listStyle="list-disc"
+      />
 
-      <JobCharacteristic content="What You Will Do" jobData={datas} listStyle="list-decimal" />
+      <JobCharacteristic
+        content="What You Will Do"
+        jobData={datas}
+        listStyle="list-decimal"
+      />
     </div>
   );
 };

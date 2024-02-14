@@ -22,8 +22,14 @@ const Component = ({ jobInformations }: jobInfosProps) => {
             alt={`${jobInformations.company} logo`}
           />
         </div>
-        
-        <JobInformations JobData={jobInformations} />
+
+        <JobInformations
+          JobData={jobInformations}
+          styleLocation="mt-11 text-sm"
+          css="mt-4 text-base text-lynch"
+          isRedirect={true}
+          isCompanyName={true}
+        />
       </li>
     </>
   );

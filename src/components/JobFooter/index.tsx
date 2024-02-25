@@ -1,17 +1,17 @@
 import { JobOffer } from "../../types/types";
+import Anchor from "../Anchor";
 
 const Component = ({ datas }: { datas: JobOffer }) => {
   return (
-    <footer className="flex">
-      <div>
-        <p>{datas?.company}</p>
-        <p className="capitalize">so digital inc.</p>
-      </div>
-
-      <div className="w-[123px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage">
-        <a href={datas?.apply} target="_blank">
+    <footer className="mt-20 bg-white">
+      <div className="w-full max-w-[730px] flex items-center justify-between py-6 m-auto">
+        <div>
+          <p className="text-xl font-bold text-mirage">{datas?.position}</p>
+          <p className="mt-3 capitalize text-lynch">{datas?.company}</p>
+        </div>
+        <Anchor href={datas?.apply} target="_blank">
           Apply Now
-        </a>
+        </Anchor>
       </div>
     </footer>
   );

@@ -1,32 +1,17 @@
-import {
-  HTMLInputTypeAttribute,
-  LinkHTMLAttributes,
-  PropsWithChildren,
-} from "react";
+import { ButtonHTMLAttributes } from "react";
 
-type ButtonProps = PropsWithChildren<{
-  TagName: keyof JSX.IntrinsicElements;
-  typeButton?: HTMLInputTypeAttribute | null;
-  href?: LinkHTMLAttributes<HTMLAnchorElement>["href"];
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   css?: string;
-}>;
+};
 
-const Component = ({
-  children,
-  TagName,
-  href,
-  typeButton,
-  css,
-}: ButtonProps) => {
+const Component = ({ children, type, css }: ButtonProps) => {
   return (
-    <TagName
-      href={TagName === "a" ? href : ""}
-      target="_blank"
-      type={typeButton}
-      className={`rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage ${css}`}
+    <button
+      type={type}
+      className={`whitespace-nowrap rounded bg-royalBlue px-5 py-3 font-bold text-white transition duration-300 hover:bg-portage ${css}`}
     >
       {children}
-    </TagName>
+    </button>
   );
 };
 

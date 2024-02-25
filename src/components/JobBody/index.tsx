@@ -1,6 +1,6 @@
 import { JobOffer } from "../../types/types";
 
-import Button from "../Button";
+import Anchor from "../Anchor";
 import JobCharacteristic from "../JobCharacteristic";
 import JobInformations from "../JobInformations";
 
@@ -16,8 +16,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
           isCompanyName={false}
         />
 
-        <Button
-          TagName="a"
+        <Anchor
           href={datas?.apply}
           children="Apply Now"
           css="self-center"

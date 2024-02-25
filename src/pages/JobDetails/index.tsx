@@ -20,13 +20,13 @@ const Page = () => {
       <Header />
 
       {datas && (
-        <LayoutContainer>
-          <>
+        <>
+          <LayoutContainer>
             <JobHeader datas={datas} />
             <JobBody datas={datas} />
-            <JobFooter datas={datas} />
-          </>
-        </LayoutContainer>
+          </LayoutContainer>
+          <JobFooter datas={datas} />
+        </>
       )}
     </div>
   );

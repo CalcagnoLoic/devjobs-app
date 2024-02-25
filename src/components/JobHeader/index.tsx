@@ -9,7 +9,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
     <header className="flex overflow-hidden rounded-md rounded-tl-none bg-white">
       <div
         style={{ backgroundColor: convertedColor }}
-        className="grid size-[140px] place-content-center"
+        className="grid size-[140px] place-content-center shrink-0"
       >
         <img src={datas?.logo} alt="" className="scale-[2]" />
       </div>
@@ -17,7 +17,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
       <div className="flex flex-1 items-center justify-between px-10">
         <div>
           <h2 className="text-2xl font-bold text-mirage">{datas?.company}</h2>
-          <p className="mt-3 text-base text-lynch">{datas?.website}</p>
+          <p className="mt-3 text-base text-lynch break-all">{datas?.website}</p>
         </div>
         <div>
           <Anchor href={datas?.website} children="Company Site" />

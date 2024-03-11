@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <div className={isDark ? "bg-vulcan" : "bg-athensGray"}>
       <Header />
-      <LayoutContainer width="large" css="mx-auto -my-10">
+      <LayoutContainer width="large" css="mx-5 -my-10 md:mx-12 lg:mx-auto">
         <Filter css="mb-[105px]" />
         <JobsList />
       </LayoutContainer>

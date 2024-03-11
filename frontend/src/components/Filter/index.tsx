@@ -9,18 +9,18 @@ const Component = ({ css }: { css: string }) => {
       action=""
       className={`flex justify-end rounded py-4 pl-8 pr-4 ${isDark ? "bg-mirage" : "bg-white"} ${css}`}
     >
-      <div className="flex w-[463px]">
+      <div className=" hidden w-[463px] md:flex">
         <FilterIcon kind="search" />
         <input
           type="text"
           name=""
           id=""
           placeholder="Filter by title, companies, expertise, ..."
-          className="h-full w-3/4 self-center bg-transparent"
+          className="h-full self-center bg-transparent md:w-3/4 "
         />
       </div>
 
-      <div className="flex w-[302px] border-x-[1px] border-x-athensGray px-4">
+      <div className="hidden w-[302px] border-x-[1px] border-x-athensGray px-4 md:flex">
         <FilterIcon kind="location" />
         <input
           type="text"

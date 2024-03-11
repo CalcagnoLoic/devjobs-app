@@ -1,11 +1,11 @@
 import { useDarkMode } from "../../hooks/useDarkMode";
-import { useRef, KeyboardEventHandler } from "react";
+import { useRef, KeyboardEventHandler, useEffect } from "react";
 
 import DarkModeIcon from "../../Icon/DarkModeIcon";
 
 const Component = () => {
   const checkbox = useRef<HTMLInputElement>(null);
-  const { toggleTheme } = useDarkMode();
+  const { toggleTheme, isDark } = useDarkMode();
 
   const handleKeydown: KeyboardEventHandler<HTMLLabelElement> = (
     keyboardEvent,
@@ -14,6 +14,12 @@ const Component = () => {
       checkbox.current?.click();
     }
   };
+
+  useEffect(() => {
+    if (checkbox.current) {
+      checkbox.current.checked = isDark;
+    }
+  }, [isDark]);
 
   return (
     <>

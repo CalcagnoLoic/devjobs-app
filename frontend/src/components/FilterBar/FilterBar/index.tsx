@@ -4,6 +4,7 @@ import FilterCheckbox from "../FilterCheckbox";
 import FilterIcon from "../../../Icon/FilterIcon";
 import FilterLocation from "../FilterLocation";
 import FilterSearch from "../FilterSearch";
+import InputField from "../../InputField";
 
 const Component = ({ css }: { css: string }) => {
   const { isDark } = useDarkMode();
@@ -21,18 +22,18 @@ const Component = ({ css }: { css: string }) => {
         <FilterCheckbox />
 
         <FilterIcon kind="filter" />
-        {window.innerWidth >768 ? (
-          <input
+        {window.innerWidth > 768 ? (
+          <InputField
             type="submit"
             value="Search"
-            className={`w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]`}
+            css={`w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]`}
           />
         ) : (
           <div className="relative">
-            <input
+            <InputField
               type="submit"
               value=" "
-              className={`w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]`}
+              css={`w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]`}
             />
             <FilterIcon kind="search" />
           </div>

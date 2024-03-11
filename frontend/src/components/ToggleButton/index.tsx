@@ -2,6 +2,7 @@ import { useDarkMode } from "../../hooks/useDarkMode";
 import { useRef, KeyboardEventHandler, useEffect } from "react";
 
 import DarkModeIcon from "../../Icon/DarkModeIcon";
+import InputField from "../InputField";
 
 const Component = () => {
   const checkbox = useRef<HTMLInputElement>(null);
@@ -24,11 +25,10 @@ const Component = () => {
   return (
     <>
       <DarkModeIcon kind="sun" />
-      <input
+      <InputField
         type="checkbox"
         id="check-button"
-        className="hidden"
-        title="Toggle dark theme"
+        css="hidden"
         onClick={toggleTheme}
         ref={checkbox}
       />

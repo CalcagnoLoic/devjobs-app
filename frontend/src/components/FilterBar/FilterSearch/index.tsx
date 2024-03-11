@@ -1,4 +1,5 @@
 import FilterIcon from "../../../Icon/FilterIcon";
+import InputField from "../../InputField";
 
 const Component = () => (
   <div className="flex w-[200px] lg:w-[463px]">
@@ -6,16 +7,14 @@ const Component = () => (
       <FilterIcon kind="search" />
     </div>
 
-    <input
+    <InputField
       type="text"
-      name=""
-      id=""
       placeholder={
         window.innerWidth > 850
           ? "Filter by title, companies, expertise, ..."
           : "Filter by title..."
       }
-      className="ml-6 h-full self-center bg-transparent md:ml-0 md:w-3/4 "
+      css="ml-6 h-full self-center bg-transparent md:ml-0 md:w-3/4 "
     />
   </div>
 );

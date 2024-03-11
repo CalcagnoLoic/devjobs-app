@@ -23,3 +23,13 @@ export interface Role {
   content: string;
   items: string[];
 }
+
+export type InputFieldProps = {
+  type: string;
+  css: string;
+  value?: string;
+  id?: string;
+  placeholder?: string;
+  onClick?: () => void;
+  ref?: React.RefObject<HTMLInputElement>;
+};

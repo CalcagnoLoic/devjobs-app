@@ -30,14 +30,14 @@ const Component = ({
       {isRedirect ? (
         <Link
           to={`/job-detail/${JobData.id}`}
-          className={`mt-4 block text-xl font-bold  transition-all duration-300 hover:text-lynch ${isDark ? "text-white" : "text-mirage"}`}
+          className={`mt-2 block text-xl font-bold transition-all  duration-300 hover:text-lynch md:mt-4 ${isDark ? "text-white" : "text-mirage"}`}
         >
           {" "}
           {JobData.position}
         </Link>
       ) : (
         <p
-          className={`mt-4 block text-3xl font-bold ${isDark ? "text-white" : "text-mirage"}`}
+          className={`mt-2 block text-xl font-bold md:mt-4 md:text-3xl ${isDark ? "text-white" : "text-mirage"}`}
         >
           {JobData.position}
         </p>

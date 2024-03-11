@@ -8,7 +8,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
   return (
     <footer className={`mt-20 ${isDark ? "bg-mirage" : "bg-white"}`}>
       <div className="m-auto flex w-full max-w-[730px] items-center justify-between py-6">
-        <div>
+        <div className="hidden md:block">
           <p
             className={`text-xl font-bold ${isDark ? "text-white" : "text-mirage"}`}
           >
@@ -16,7 +16,11 @@ const Component = ({ datas }: { datas: JobOffer }) => {
           </p>
           <p className="mt-3 capitalize text-lynch">{datas?.company}</p>
         </div>
-        <Anchor href={datas?.apply} target="_blank">
+        <Anchor
+          href={datas?.apply}
+          target="_blank"
+          css="text-center w-full md:w-auto mx-6 "
+        >
           Apply Now
         </Anchor>
       </div>

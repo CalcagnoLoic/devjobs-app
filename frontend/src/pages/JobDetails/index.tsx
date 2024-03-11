@@ -23,7 +23,7 @@ const Page = () => {
 
       {datas && (
         <>
-          <LayoutContainer css="mx-auto -my-10">
+          <LayoutContainer css="mx-6 md:mx-auto -my-10 ">
             <JobHeader datas={datas} />
             <JobBody datas={datas} />
           </LayoutContainer>

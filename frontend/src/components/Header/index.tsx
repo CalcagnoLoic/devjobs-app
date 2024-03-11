@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Component: React.FC = () => {
   return (
-    <header className=" rounded-bl-[100px] bg-royalBlue bg-patternDesktop bg-contain bg-no-repeat px-[165px] pb-16 pt-16">
+    <header className="bg-royalBlue bg-patternDesktop bg-contain bg-no-repeat px-6 pb-16 pt-16 md:rounded-bl-[100px] md:px-12 lg:px-[165px] -mt-5">
       <div className="mx-auto flex max-w-[1110px] justify-between">
         <Link to={"/"}>
           <h1>

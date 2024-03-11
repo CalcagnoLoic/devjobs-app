@@ -4,6 +4,7 @@ import { JobOffer } from "../../../types/types";
 import Anchor from "../../Anchor";
 import JobCharacteristic from "../JobCharacteristic";
 import JobInformations from "../JobInformations";
+import Paragraph from "../../../typographies/Paragraph";
 
 const Component = ({ datas }: { datas: JobOffer }) => {
   const { isDark } = useDarkMode();
@@ -26,7 +27,11 @@ const Component = ({ datas }: { datas: JobOffer }) => {
         />
       </div>
 
-      <p className="mt-12 leading-7 text-lynch">{datas?.description}</p>
+      <Paragraph
+        kind="p"
+        content={datas?.description}
+        css="mt-12 leading-7 text-lynch"
+      />
 
       <JobCharacteristic
         content="Requirements"

@@ -2,6 +2,8 @@ import { JobOffer } from "../../../types/types";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../../../hooks/useDarkMode";
 
+import Paragraph from "../../../typographies/Paragraph";
+
 interface JobInformations {
   JobData: JobOffer;
   styleLocation: string;
@@ -21,33 +23,42 @@ const Component = ({
 
   return (
     <div>
-      <p className="text-base text-lynch">
-        {JobData?.postedAt}
-        <span className="mx-3 text-3xl leading-3">.</span>
-        {JobData?.contract}
-      </p>
+      <Paragraph
+        kind="p"
+        css="text-base text-lynch"
+        content={
+          <>
+            {JobData?.postedAt}
+            <span className="mx-3 text-3xl leading-3">.</span>
+            {JobData?.contract}
+          </>
+        }
+      />
 
       {isRedirect ? (
         <Link
           to={`/job-detail/${JobData.id}`}
           className={`mt-2 block text-xl font-bold transition-all  duration-300 hover:text-lynch md:mt-4 ${isDark ? "text-white" : "text-mirage"}`}
         >
-          {" "}
           {JobData.position}
         </Link>
       ) : (
-        <p
-          className={`mt-2 block text-xl font-bold md:mt-4 md:text-3xl ${isDark ? "text-white" : "text-mirage"}`}
-        >
-          {JobData.position}
-        </p>
+        <Paragraph
+          kind="p"
+          content={JobData.position}
+          css={`mt-2 block text-xl font-bold md:mt-4 md:text-3xl ${isDark ? "text-white" : "text-mirage"}`}
+        />
       )}
 
-      {isCompanyName && <p className={`${css}`}>{JobData?.company}</p>}
+      {isCompanyName && (
+        <Paragraph kind="p" content={JobData?.company} css={css} />
+      )}
 
-      <p className={`font-bold text-royalBlue ${styleLocation}`}>
-        {JobData?.location}
-      </p>
+      <Paragraph
+        kind="p"
+        content={JobData?.location}
+        css={`font-bold text-royalBlue ${styleLocation}`}
+      />
     </div>
   );
 };

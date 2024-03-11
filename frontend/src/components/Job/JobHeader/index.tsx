@@ -1,14 +1,16 @@
+import { convertWebsiteName } from "../../../utils/convertWebsiteName";
 import { JobOffer } from "../../../types/types";
 import { useConvertedColor } from "../../../hooks/useConvertedColor";
 import { useDarkMode } from "../../../hooks/useDarkMode";
-import { convertWebsiteName } from "../../../utils/convertWebsiteName";
 
 import Anchor from "../../Anchor";
+import Heading from "../../../typographies/Heading";
+import Paragraph from "../../../typographies/Paragraph";
 
 const Component = ({ datas }: { datas: JobOffer }) => {
   const convertedColor = useConvertedColor(datas?.logoBackground);
-  const domain = (datas?.website.match(/\/([^\\/]+)\/?$/) || [])[1];
-  const website = convertWebsiteName(datas?.website, domain);
+  const website = convertWebsiteName(datas?.website);
+  
   const { isDark } = useDarkMode();
 
   return (
@@ -19,19 +21,26 @@ const Component = ({ datas }: { datas: JobOffer }) => {
         style={{ backgroundColor: convertedColor }}
         className="grid size-[140px] shrink-0 place-content-center "
       >
-        <img src={datas?.logo} alt="" className="scale-[2]" />
+        <img
+          src={datas?.logo}
+          alt={`Job Offer for ${website}`}
+          className="scale-[2]"
+        />
       </div>
 
       <div className="my-3 flex flex-1 flex-col items-center justify-between px-10 md:my-0 md:flex-row">
         <div className="-ml-3 md:-ml-0">
-          <h2
-            className={`text-2xl font-bold ${isDark ? "text-white" : "text-mirage"}`}
-          >
-            {datas?.company}
-          </h2>
-          <p className="mt-1 break-all text-base text-lynch md:mt-3">
-            {website}
-          </p>
+          <Heading
+            kind="h2"
+            content={datas?.company}
+            css={`text-2xl font-bold ${isDark ? "text-white" : "text-mirage"}`}
+          />
+
+          <Paragraph
+            kind="p"
+            content={website}
+            css="mt-1 break-all text-base text-lynch md:mt-3"
+          />
         </div>
         <div>
           <Anchor

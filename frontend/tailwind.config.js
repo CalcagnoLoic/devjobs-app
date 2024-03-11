@@ -16,38 +16,6 @@ export default {
         cadetBlue: "#9DAEC2",
         lynch: "#6E8098",
       },
-      fontSize: {
-        headingH1: [
-          "28px",
-          {
-            lineHeight: "34px",
-          },
-        ],
-        headingH2: [
-          "24px",
-          {
-            lineHeight: "29px",
-          },
-        ],
-        headingH3: [
-          "20px",
-          {
-            lineHeight: "24px",
-          },
-        ],
-        headingH4: [
-          "14px",
-          {
-            lineHeight: "18px",
-          },
-        ],
-        paragraph: [
-          "16px",
-          {
-            lineHeight: "26px",
-          },
-        ],
-      },
       backgroundImage: {
         patternDesktop:
           "url('/assets/img/desktop/bg-pattern-header.svg')",

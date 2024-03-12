@@ -7,7 +7,7 @@ const Component = ({
   id,
   placeholder,
   onClick,
-  ref,
+  reference,
 }: InputFieldProps) => (
   <input
     type={type}
@@ -16,7 +16,7 @@ const Component = ({
     id={id}
     placeholder={placeholder}
     onClick={onClick}
-    ref={ref}
+    ref={reference}
   />
 );
 

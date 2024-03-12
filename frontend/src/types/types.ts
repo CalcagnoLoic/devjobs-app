@@ -31,5 +31,5 @@ export type InputFieldProps = {
   id?: string;
   placeholder?: string;
   onClick?: () => void;
-  ref?: React.RefObject<HTMLInputElement>;
+  reference?: React.RefObject<HTMLInputElement>;
 };

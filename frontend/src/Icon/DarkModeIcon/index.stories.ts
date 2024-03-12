@@ -6,6 +6,17 @@ const meta = {
   title: "Icons/DarkModeIcon",
   tags: ["autodocs"],
   component: DarkModeIcon,
+  parameters: {
+    backgrounds: {
+      default: "Dark",
+      values: [
+        { name: "Dark", value: "#131313" },
+      ],
+    },
+  },
+  argTypes: {
+    kind: {description: "The type of icon"}
+  }
 } satisfies Meta<typeof DarkModeIcon>;
 
 export default meta;

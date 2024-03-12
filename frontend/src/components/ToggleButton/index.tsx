@@ -30,7 +30,7 @@ const Component = () => {
         id="check-button"
         css="hidden"
         onClick={toggleTheme}
-        ref={checkbox}
+        reference={checkbox}
       />
       <label
         htmlFor="check-button"

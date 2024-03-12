@@ -12,7 +12,7 @@
     "dev:format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "dev:compile": "tsc",
+    "dev:compile": "tsc --watch",
     "test": "vitest"
   },
   "dependencies": {

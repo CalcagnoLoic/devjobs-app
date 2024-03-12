@@ -1,14 +1,14 @@
 import FilterIcon from "../../../Icon/FilterIcon";
 
+import InputField from "../../InputField";
+
 const Component = () => (
   <div className="hidden w-[200px] border-x-[1px] border-x-athensGray px-4 md:flex lg:w-[302px]">
     <FilterIcon kind="location" />
-    <input
+    <InputField
       type="text"
-      name=""
-      id=""
       placeholder="Filter by location, ..."
-      className="bg-transparent"
+      css="bg-transparent"
     />
   </div>
 );

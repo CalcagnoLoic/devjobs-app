@@ -2,9 +2,10 @@ import { useDarkMode } from "../../hooks/useDarkMode";
 
 type FilterIconProps = {
   kind: "search" | "location" | "filter";
+  onClick?: () => void;
 };
 
-const Icon = ({ kind }: FilterIconProps) => {
+const Icon = ({ kind, onClick }: FilterIconProps) => {
   const { isDark } = useDarkMode();
 
   switch (kind) {
@@ -30,7 +31,7 @@ const Icon = ({ kind }: FilterIconProps) => {
           width="17"
           height="24"
           xmlns="http://www.w3.org/2000/svg"
-          className="mr-4 hidden self-center md:block"
+          className=" self-center md:block"
         >
           <path
             d="M14.358 2.451A8.3 8.3 0 008.448 0a8.3 8.3 0 00-5.911 2.451c-2.922 2.925-3.285 8.427-.786 11.76l6.697 9.683 6.687-9.669c2.508-3.347 2.145-8.85-.777-11.774zm-5.833 8.894a3.057 3.057 0 01-3.051-3.054 3.057 3.057 0 013.05-3.055 3.057 3.057 0 013.052 3.055 3.057 3.057 0 01-3.051 3.054z"
@@ -47,6 +48,7 @@ const Icon = ({ kind }: FilterIconProps) => {
           height="20"
           xmlns="http://www.w3.org/2000/svg"
           className="cursor-pointer self-center md:hidden"
+          onClick={onClick}
         >
           <path
             d="M19.108 0H.86a.86.86 0 00-.764.455.833.833 0 00.068.884l6.685 9.202.007.01c.242.32.374.708.375 1.107v7.502a.825.825 0 00.248.594.865.865 0 00.942.18l3.756-1.4c.337-.1.56-.41.56-.784v-6.092c0-.399.132-.787.375-1.108l.007-.009 6.685-9.202c.19-.26.217-.6.068-.884A.86.86 0 0019.108 0z"

@@ -2,6 +2,7 @@ import { useFetch } from "../../../hooks/useFetch";
 import { JobOffer } from "../../../types/types";
 
 import CardJob from "../../CardJob";
+import Error404 from "../../Error404";
 import Loader from "../../Loader";
 /* import jobsList from "../../../data/data.json"; */
 
@@ -26,7 +27,7 @@ const Component = () => {
         ))}
       </ul> */}
 
-      {isError && <p>il y a une erreur</p>}
+      {isError && <Error404 />}
     </>
   );
 };

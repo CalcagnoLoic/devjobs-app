@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DarkModeProvider } from "./context/DarkModeContext";
 
-import Error404 from "./pages/Error404";
+import Error404 from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import JobDetails from "./pages/JobDetails";
 import React from "react";

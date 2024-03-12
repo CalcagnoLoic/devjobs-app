@@ -17,6 +17,14 @@ export const DarkModeProvider = ({ children }: { children: JSX.Element }) => {
     setIsDark((prevState) => !prevState);
   };
 
+  if (isDark) {
+    document.body.classList.add("bg-vulcan");
+    document.body.classList.remove("bg-athensGray");
+  } else {
+    document.body.classList.remove("bg-vulcan");
+    document.body.classList.add("bg-athensGray");
+  }
+
   const contextValue: DarkModeContextProps = {
     isDark,
     toggleTheme,

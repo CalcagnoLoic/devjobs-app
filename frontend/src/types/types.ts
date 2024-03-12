@@ -33,3 +33,8 @@ export type InputFieldProps = {
   onClick?: () => void;
   reference?: React.RefObject<HTMLInputElement>;
 };
+
+export type FilterProps = {
+  additionalCSS?: string | "";
+  additionalCSSIcon?: string | "";
+}

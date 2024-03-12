@@ -1,6 +1,9 @@
+import { createPortal } from "react-dom";
 import { useDarkMode } from "../../../hooks/useDarkMode";
+import { useState } from "react";
 
 import FilterCheckbox from "../FilterCheckbox";
+import FilterDropdown from "../FilterDropdown";
 import FilterIcon from "../../../Icon/FilterIcon";
 import FilterLocation from "../FilterLocation";
 import FilterSearch from "../FilterSearch";
@@ -12,20 +15,25 @@ type FilterBarProps = {
 
 const Component = ({ css }: FilterBarProps) => {
   const { isDark } = useDarkMode();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setIsOpen((prevState) => !prevState);
+  };
 
   return (
     <form
-      action=""
       className={`mx-6 flex justify-end rounded py-4 pl-8 pr-4 md:mx-auto ${isDark ? "bg-mirage" : "bg-white"} ${css}`}
     >
       <FilterSearch />
 
-      <FilterLocation />
+      <FilterLocation additionalCSS="hidden md:flex border-x-[1px] border-x-athensGray" />
 
       <div className="flex w-[345px] justify-center gap-x-7 lg:justify-end">
-        <FilterCheckbox />
+        <FilterCheckbox additionalCSS="hidden md:flex" />
 
-        <FilterIcon kind="filter" />
+        <FilterIcon kind="filter" onClick={handleClick} />
+
         {window.innerWidth > 768 ? (
           <InputField
             type="submit"
@@ -43,6 +51,8 @@ const Component = ({ css }: FilterBarProps) => {
           </div>
         )}
       </div>
+
+      {isOpen && createPortal(<FilterDropdown />, document.body)}
     </form>
   );
 };

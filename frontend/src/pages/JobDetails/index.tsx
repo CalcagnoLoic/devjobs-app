@@ -1,5 +1,4 @@
 import { JobOffer } from "../../types/types";
-import { useDarkMode } from "../../hooks/useDarkMode";
 import { useParams } from "react-router-dom";
 
 import dataTest from "../../data/data.json";
@@ -11,14 +10,13 @@ import LayoutContainer from "../../layout/LayoutContainer";
 
 const Page = () => {
   const { JobId } = useParams();
-  const { isDark } = useDarkMode();
 
   const datas: JobOffer | undefined = dataTest.find(
     (array) => JobId === String(array.id),
   );
 
   return (
-    <div className={isDark ? "bg-vulcan" : "bg-athensGray"}>
+    <div>
       <Header />
 
       {datas && (

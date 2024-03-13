@@ -14,9 +14,9 @@ const Component = () => {
       {isLoading && <Loader />}
 
       {isData && (
-        <ul className="flex flex-wrap justify-center md:justify-between gap-y-16">
-          {isData.map((job: JobOffer) => (
-            <CardJob jobInformations={job} />
+        <ul className="flex flex-wrap justify-center gap-y-16 md:justify-between">
+          {isData.map((job: JobOffer, index) => (
+            <CardJob jobInformations={job} key={index} />
           ))}
         </ul>
       )}

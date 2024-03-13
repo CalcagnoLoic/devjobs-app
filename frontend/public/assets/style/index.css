@@ -12,4 +12,12 @@
   #check-button:checked + .check-button {
     @apply before:translate-x-[140%] [&:before]:bg-royalBlue;
   }
+
+  .input-submit {
+    @apply cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage;
+  }
+
+  .no-scroll {
+    @apply overflow-hidden;
+  }
 }

@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import { useDarkMode } from "../../../hooks/useDarkMode";
+import { useMobile } from "../../../hooks/useMobile";
 import { useState } from "react";
 
 import FilterCheckbox from "../FilterCheckbox";
@@ -15,6 +16,7 @@ type FilterBarProps = {
 
 const Component = ({ css }: FilterBarProps) => {
   const { isDark } = useDarkMode();
+  const isMobile = useMobile();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -34,25 +36,30 @@ const Component = ({ css }: FilterBarProps) => {
 
         <FilterIcon kind="filter" onClick={handleClick} />
 
-        {window.innerWidth > 768 ? (
+        {!isMobile ? (
           <InputField
             type="submit"
             value="Search"
-            css="w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]"
+            css="input-submit w-[48px] md:w-[123px]"
           />
         ) : (
           <div className="relative">
             <InputField
               type="submit"
               value=" "
-              css="w-[48px] cursor-pointer rounded bg-royalBlue px-8 py-3 font-bold text-white transition duration-300 hover:bg-portage md:w-[123px]"
+              css="input-submit w-[48px] md:w-[123px]"
             />
             <FilterIcon kind="search" />
           </div>
         )}
       </div>
 
-      {isOpen && createPortal(<FilterDropdown />, document.body)}
+      {isOpen &&
+        isMobile &&
+        createPortal(
+          <FilterDropdown isOpen={isOpen} setIsOpen={setIsOpen} />,
+          document.body,
+        )}
     </form>
   );
 };

@@ -4,6 +4,8 @@
 
 Bien se positionner dans le dossier `frontend` avant de commencer. 
 
+<details><summary>Lancement avec npm</summary>
+
 ### Installation des paquets
 
 ```cmd
@@ -15,10 +17,29 @@ $ npm i
 ```cmd
 $ npm run dev
 ```
+</details>
+
+<details><summary>Lancement avec docker</summary>
+
+### Création de l'image
+
+```cmd
+$ docker image build . -t devjobs_frontend
+```
+
+### Lancement du container
+
+```cmd
+$ docker run -dp 5173:5173 devjobs_frontend
+```
+</details>
+
 
 ## Lancement du serveur backend
 
 Bien se positionner dans le dossier `backend` avant de commencer. 
+
+<details><summary>Lancement avec python</summary>
 
 ### Installation et activation de l'environnement virtuel
 
@@ -52,3 +73,21 @@ $ pip freeze > requirements.txt
 ```cmd
 python run.py run
 ```
+
+</details>
+
+<details><summary>Lancement avec docker</summary>
+
+### Création de l'image
+
+```cmd
+$ docker image build . -t devjobs_backend
+```
+
+### Lancement du container
+
+```cmd
+$ docker run devjobs_backend
+```
+
+</details>

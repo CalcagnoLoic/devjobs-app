@@ -19,19 +19,14 @@ $ npm run dev
 ```
 </details>
 
-<details><summary>Lancement avec docker</summary>
+<details><summary>Lancement avec docker compose</summary>
 
-### Création de l'image
-
-```cmd
-$ docker image build . -t devjobs_frontend
-```
-
-### Lancement du container
+### Lancement de l'application côté front et back
 
 ```cmd
-$ docker run -dp 5173:5173 devjobs_frontend
+$ docker compose up
 ```
+
 </details>
 
 
@@ -71,23 +66,17 @@ $ pip freeze > requirements.txt
 ### Lancement du serveur local
 
 ```cmd
-python run.py run
+python app.py
 ```
 
 </details>
 
-<details><summary>Lancement avec docker</summary>
+<details><summary>Lancement avec docker compose</summary>
 
-### Création de l'image
-
-```cmd
-$ docker image build . -t devjobs_backend
-```
-
-### Lancement du container
+### Lancement de l'application côté front et back
 
 ```cmd
-$ docker run -dp 5000:5000 devjobs_backend
+$ docker compose up
 ```
 
 </details>

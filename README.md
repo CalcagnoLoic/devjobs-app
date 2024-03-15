@@ -2,7 +2,7 @@
 
 ## Lancement du serveur frontend
 
-Bien se positionner dans le dossier `frontend` avant de commencer. 
+Bien se positionner dans le dossier `frontend` avant de commencer et lancer Docker. 
 
 <details><summary>Lancement avec npm</summary>
 
@@ -37,7 +37,7 @@ $ docker run -dp 5173:5173 devjobs_frontend
 
 ## Lancement du serveur backend
 
-Bien se positionner dans le dossier `backend` avant de commencer. 
+Bien se positionner dans le dossier `backend` avant de commencer et lancer Docker.
 
 <details><summary>Lancement avec python</summary>
 
@@ -87,7 +87,7 @@ $ docker image build . -t devjobs_backend
 ### Lancement du container
 
 ```cmd
-$ docker run devjobs_backend
+$ docker run -dp 5000:5000 devjobs_backend
 ```
 
 </details>

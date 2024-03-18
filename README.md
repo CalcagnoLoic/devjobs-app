@@ -1,82 +1,94 @@
 # DevJobs app
 
-## Lancement du serveur frontend
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=ts,react,tailwind,python,flask,docker,vite" />
+  </a>
+</p>
 
-Bien se positionner dans le dossier `frontend` avant de commencer et lancer Docker. 
+<p align="center">
+   <img src="frontend/public/assets/img/readme.png" width="50%">
+</p>
 
-<details><summary>Lancement avec npm</summary>
 
-### Installation des paquets
-
-```cmd
-$ npm i
-```
-
-### Lancement du serveur local
-
-```cmd
-$ npm run dev
-```
-</details>
-
-<details><summary>Lancement avec docker compose</summary>
-
-### Lancement de l'application côté front et back
+## Launching with `docker compose`
 
 ```cmd
 $ docker compose up
 ```
 
+## Launching with local server
+
+<details><summary>Launching the frontend server</summary>
+
+Position yourself in the `frontend` folder before starting and launch Docker. 
+
+```cmd
+$ npm i
+
+$ npm run dev
+```
 </details>
 
+<details><summary>Launching the backend server</summary>
 
-## Lancement du serveur backend
+Position yourself in the `backend` folder before starting and launch Docker.
 
-Bien se positionner dans le dossier `backend` avant de commencer et lancer Docker.
+### Virtual environment installation and activation
 
-<details><summary>Lancement avec python</summary>
-
-### Installation et activation de l'environnement virtuel
-
-**Attention**, pour *MacOS*, la deuxième ligne de commande peut être différente
+**Warning**, for *MacOS*, the second command line may be different
 
 ```cmd
 $ python -m venv env
 
-////Activation de l'environnement virtuel
 // Windows
 $ source env/Scripts/activate
-
 // Mac
 $ source env/bin/activate
 ```
 
-### Installation des paquets
+### Package installation
 
 ```cmd
 $ pip install -r requirements.txt
 ```
 
-Si nouvelle installation de faite dans l'environnement virtuel, ne pas oublier de lancer 
+If a new installation is made in the virtual environment, don't forget to run 
 
 ```cmd
 $ pip freeze > requirements.txt
 ```
 
-### Lancement du serveur local
+### Launch local server
 
 ```cmd
 python app.py
 ```
-
 </details>
 
-<details><summary>Lancement avec docker compose</summary>
+## User stories
 
-### Lancement de l'application côté front et back
+Your users should be able to:
 
-```cmd
-$ docker compose up
-```
+- [ ] Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
+- [x] Be able to click a job from the index page so that they can read more information and apply for the job
+- [x] View the optimal layout for each page depending on their device's screen size
+- [x] See hover states for all interactive elements throughout the site
+- [x] Have the correct color scheme chosen for them based on their computer preferences
+- [x] Build this project as a full-stack application
 
-</details>
+
+## Built with
+
+- Semantic HTML5 markup
+- TailwindCSS
+- React-TS
+- Storybook
+- Chromatic
+- Python - Flask
+- Docker
+
+## Authors
+
+- Frontend - [@amel-selmane ](https://github.com/amel-selmane)
+- Backend/Docker - [@CalcagnoLoic](https://github.com/CalcagnoLoic)

@@ -4,7 +4,7 @@ import LayoutContainer from "../../layout/LayoutContainer";
 import FilterBar from "../../components/FilterBar/FilterBar";
 
 const Page = () => (
-  <div>
+  <div className="pb-12">
     <Header />
     <LayoutContainer width="large" css="mx-5 -my-10 md:mx-12 lg:mx-auto ">
       <FilterBar css="mb-[105px]" />

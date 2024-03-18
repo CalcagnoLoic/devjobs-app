@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface DarkModeContextProps {
   isDark: boolean;
@@ -24,6 +24,12 @@ export const DarkModeProvider = ({ children }: { children: JSX.Element }) => {
     document.body.classList.remove("bg-vulcan");
     document.body.classList.add("bg-athensGray");
   }
+
+  useEffect(() => {
+    const systemsSettings = window.matchMedia("(prefers-color-scheme: dark)");
+    if (systemsSettings.matches) setIsDark(true);
+    systemsSettings.addEventListener("change", (e) => setIsDark(e.matches));
+  }, []);
 
   const contextValue: DarkModeContextProps = {
     isDark,

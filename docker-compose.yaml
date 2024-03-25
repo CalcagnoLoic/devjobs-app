@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  frontend: 
-    build: frontend
-    ports:
-      - 5173:5173
-    volumes:
-      - ./frontend:/frontend
+  #frontend: 
+  #  build: frontend
+  #  ports:
+  #    - 5173:5173
+  #  volumes:
+  #   - ./frontend:/frontend
 
   backend:
     build: backend

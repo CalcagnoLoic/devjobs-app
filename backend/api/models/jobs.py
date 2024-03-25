@@ -1,4 +1,4 @@
-from db import Base, session
+from database.db import Base
 from sqlalchemy import Integer, Column, String
 
 
@@ -35,19 +35,3 @@ class Job(Base):
         self.logo = logo
         self.logo_background = logo_background
 
-
-scoot = Job(
-    1,
-    1,
-    "Full Time",
-    "United Kingdom",
-    "Senior Software Engineer",
-    "5h ago",
-    "./public/assets/img/logos/scoot.svg",
-    "hsl(36, 87%, 49%)",
-)
-
-
-if __name__ == "__main__":
-    session.add(scoot)
-    session.commit()

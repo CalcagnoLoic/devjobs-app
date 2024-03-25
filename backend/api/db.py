@@ -1,23 +1,11 @@
-import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+from models.jobs import Job
 
-DB_USER = os.environ.get("DB_USER")
-
-
-engine = create_engine("mysql+pymysql://{}:toto90@database/devops_jobs".format(DB_USER))
-
-Session = sessionmaker(bind=engine)
+engine = create_engine("mysql+pymysql://admin@devjobs:secretpw@database/devjobs")
+Session = sessionmaker(engine)
 session = Session()
 
 Base = declarative_base()
-
-
-class Job(Base):
-    __tablename__ = "jobs"
-
-    id = Column(Integer, primary_key=True)
-    title=Column('title', String(32))
-
 

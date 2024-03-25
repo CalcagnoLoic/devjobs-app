@@ -1,20 +1,17 @@
 version: '3'
 
 services:
-  #frontend: 
-  # build: frontend
-  # depends_on:
-  #   - database
-  #   - adminer
-  # ports:
-  #   - 5173:5173
+  frontend: 
+    build: frontend
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/frontend
 
   backend:
     build: backend
     stdin_open: true
     tty: true
-    environment:
-      - DB_USER=admin
     ports:
       - 5001:5000
     volumes:
@@ -24,9 +21,9 @@ services:
     image: mariadb
     environment:
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER: admin
-      MARIADB_PASSWORD: toto90
-      MARIADB_DATABASE: devops_jobs
+      MARIADB_USER: admin@devjobs
+      MARIADB_PASSWORD: secretpw
+      MARIADB_DATABASE: devjobs
 
   adminer:
     image: adminer

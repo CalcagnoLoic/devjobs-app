@@ -1,16 +1,8 @@
-import { JobOffer } from "../../../types/types";
+import { JobInformations } from "../../../types/interfaces";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../../../hooks/useDarkMode";
 
 import Paragraph from "../../../typographies/Paragraph";
-
-interface JobInformations {
-  JobData: JobOffer;
-  styleLocation: string;
-  css: string;
-  isRedirect: boolean;
-  isCompanyName: boolean;
-}
 
 const Component = ({
   JobData,

@@ -1,4 +1,4 @@
-export interface JobOffer {
+export type JobOffer = {
   id: number;
   company: string;
   logo: string;
@@ -10,19 +10,12 @@ export interface JobOffer {
   website: string;
   apply: string;
   description: string;
-  requirements: Requirements;
-  role: Role;
+  requirements: string[];
+  requirementsDescription: string
+  roles: string[]
+  roleDescription: string
 }
 
-export interface Requirements {
-  content: string;
-  items: string[];
-}
-
-export interface Role {
-  content: string;
-  items: string[];
-}
 
 export type InputFieldProps = {
   type: string;
@@ -37,4 +30,4 @@ export type InputFieldProps = {
 export type FilterProps = {
   additionalCSS?: string | "";
   additionalCSSIcon?: string | "";
-}
+};

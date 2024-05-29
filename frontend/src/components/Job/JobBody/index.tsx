@@ -9,6 +9,8 @@ import Paragraph from "../../../typographies/Paragraph";
 const Component = ({ datas }: { datas: JobOffer }) => {
   const { isDark } = useDarkMode();
 
+  console.log(datas.id)
+
   return (
     <div className={`mt-6 p-12 ${isDark ? "bg-mirage" : "bg-white"}`}>
       <div className="flex flex-col justify-between md:flex-row">
@@ -35,13 +37,15 @@ const Component = ({ datas }: { datas: JobOffer }) => {
 
       <JobCharacteristic
         content="Requirements"
-        jobData={datas}
+        jobRequirements={datas.requirements}
+        jobDescription={datas.requirementsDescription}
         listStyle="list-disc"
       />
 
       <JobCharacteristic
         content="What You Will Do"
-        jobData={datas}
+        jobRequirements={datas.roles}
+        jobDescription={datas.roleDescription}
         listStyle="list-decimal"
       />
     </div>

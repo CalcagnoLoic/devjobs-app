@@ -23,7 +23,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
       >
         <img
           src={datas?.logo}
-          alt={`Job Offer for ${website}`}
+          alt={`${website}`}
           className="scale-[2]"
         />
       </div>

@@ -1,5 +1,7 @@
 # DevJobs app
 
+🛠️ATTENTION AVAILABLE LOCALLY ONLY FOR THE MOMENT 🛠️. The  environment variables (test) for starting the project are given in the section with docker compose. If you have any problems, don't hesitate to open an issue or contact me directly ::smile::
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=ts,react,tailwind,python,flask,docker,vite" />
@@ -10,61 +12,32 @@
    <img src="frontend/public/assets/img/readme.png" width="70%">
 </p>
 
+If you want to run the project locally, use docker and a code editor, having first cloned the project.
 
-## Launching with `docker compose`
+## Launching backend  `docker compose`
+
+To connect to the database service, simply write these environment variables to a file named `.env`. This data is dummy data. During the development phase, these variables will no longer be available.
+
+```
+MARIADB_ROOT_PASSWORD=example
+MARIADB_USER=admin@devjobs
+MARIADB_PASSWORD=secretpw
+MARIADB_DATABASE=devjobs
+```
+
+Then you can run this command:
 
 ```cmd
 $ docker compose up
 ```
 
-## Launching with local server
-
-<details><summary>Launching the frontend server</summary>
-
-Position yourself in the `frontend` folder before starting and launch Docker. 
+## Launching frontend with vite
 
 ```cmd
+$ cd frontend
 $ npm i
-
 $ npm run dev
 ```
-</details>
-
-<details><summary>Launching the backend server</summary>
-
-Position yourself in the `backend` folder before starting and launch Docker.
-
-### Virtual environment installation and activation
-
-**Warning**, for *MacOS*, the second command line may be different
-
-```cmd
-$ python -m venv env
-
-// Windows
-$ source env/Scripts/activate
-// Mac
-$ source env/bin/activate
-```
-
-### Package installation
-
-```cmd
-$ pip install -r requirements.txt
-```
-
-If a new installation is made in the virtual environment, don't forget to run 
-
-```cmd
-$ pip freeze > requirements.txt
-```
-
-### Launch local server
-
-```cmd
-python app.py
-```
-</details>
 
 ## User stories
 
@@ -90,5 +63,5 @@ Your users should be able to:
 
 ## Authors
 
-- Frontend - [@amel-selmane ](https://github.com/amel-selmane)
-- Backend/Docker - [@CalcagnoLoic](https://github.com/CalcagnoLoic)
+- Frontend - [@amel-selmane](https://github.com/amel-selmane)
+- Frontend/Backend/Docker - [@CalcagnoLoic](https://github.com/CalcagnoLoic)

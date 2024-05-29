@@ -7,8 +7,8 @@ import Error404 from "../../Error404";
 import Loader from "../../Loader";
 
 const Component = () => {
-  const { isData, isLoading, isError } = useFetch("http://127.0.0.1:5000/");
-  const [displayedOffer, setDisplayedOffer] = useState<JobOffer[]>(isData);
+  const { isData, isLoading, isError } = useFetch("");
+  const [displayedOffer, setDisplayedOffer] = useState<JobOffer[]>([]);
   const [visibleOffer, setVisibleOffer] = useState<number>(6);
 
   const handleClick = () => {
@@ -16,7 +16,9 @@ const Component = () => {
   };
 
   useEffect(() => {
-    if (isData) setDisplayedOffer(isData.slice(0, visibleOffer));
+    if (isData && Array.isArray(isData)) {
+      setDisplayedOffer(isData.slice(0, visibleOffer));
+    }
   }, [isData, visibleOffer]);
 
   return (
@@ -31,10 +33,10 @@ const Component = () => {
         </ul>
       )}
 
-      {visibleOffer < isData.length && (
+      {visibleOffer < (isData as JobOffer[]).length && (
         <button
           onClick={handleClick}
-          className="mx-auto mt-14 mb-5 block rounded bg-royalBlue px-8 py-4 font-bold text-white"
+          className="mx-auto mb-5 mt-14 block rounded bg-royalBlue px-8 py-4 font-bold text-white"
         >
           {isLoading ? "Loading..." : "Load More"}
         </button>

@@ -1,6 +1,5 @@
-import json
 from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy import ARRAY, Integer, Column, String, ForeignKey, Text
+from sqlalchemy import Integer, Column, String, ForeignKey, Text
 
 Base = declarative_base()
 
@@ -12,11 +11,6 @@ class Role(Base):
     description = Column("description", String(624))
     roles = Column("roles", Text)
 
-    def __init__(self, id, description, roles):
-        self.id = id
-        self.description = description
-        self.roles = json.dumps(roles)
-
 
 class Requirements(Base):
     __tablename__ = "requirements"
@@ -25,10 +19,6 @@ class Requirements(Base):
     description = Column("description", String(624))
     requirements = Column(Text)
 
-    def __init__(self, id, description, requirements):
-        self.id = id
-        self.description = description
-        self.requirements = json.dumps(requirements)
 
 
 class Offer(Base):
@@ -51,30 +41,3 @@ class Offer(Base):
     role = relationship(Role)
     requirements = relationship(Requirements)
 
-    def __init__(
-        self,
-        company,
-        role_id,
-        requirements_id,
-        contract,
-        location,
-        position,
-        posted_at,
-        description,
-        apply,
-        company_website,
-        logo,
-        logo_background,
-    ):
-        self.company = company
-        self.role_id = role_id
-        self.requirements_id = requirements_id
-        self.contract = contract
-        self.location = location
-        self.position = position
-        self.posted_at = posted_at
-        self.description = description
-        self.apply = apply
-        self.company_website = company_website
-        self.logo = logo
-        self.logo_background = logo_background

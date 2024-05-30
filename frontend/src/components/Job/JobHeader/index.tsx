@@ -1,4 +1,5 @@
 import { convertWebsiteName } from "../../../utils/convertWebsiteName";
+import { getPath } from "../../../utils/getPath";
 import { JobOffer } from "../../../types/types";
 import { useConvertedColor } from "../../../hooks/useConvertedColor";
 import { useDarkMode } from "../../../hooks/useDarkMode";
@@ -10,7 +11,6 @@ import Paragraph from "../../../typographies/Paragraph";
 const Component = ({ datas }: { datas: JobOffer }) => {
   const convertedColor = useConvertedColor(datas?.logoBackground);
   const website = convertWebsiteName(datas?.website);
-  
   const { isDark } = useDarkMode();
 
   return (
@@ -22,7 +22,7 @@ const Component = ({ datas }: { datas: JobOffer }) => {
         className="grid size-[140px] shrink-0 place-content-center "
       >
         <img
-          src={datas?.logo}
+          src={getPath(datas?.logo)}
           alt={`${website}`}
           className="scale-[2]"
         />

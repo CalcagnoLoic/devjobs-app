@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetchJobOffers } from "../../../hooks/useFetchJobOffers ";
 import { JobOffer } from "../../../types/types";
 
 import CardJob from "../../CardJob";
@@ -7,7 +7,7 @@ import Error404 from "../../Error404";
 import Loader from "../../Loader";
 
 const Component = () => {
-  const { isData, isLoading, isError } = useFetch("");
+  const { isData, isLoading, isError } = useFetchJobOffers();
   const [displayedOffer, setDisplayedOffer] = useState<JobOffer[]>([]);
   const [visibleOffer, setVisibleOffer] = useState<number>(6);
 

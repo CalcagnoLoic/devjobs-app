@@ -1,14 +1,15 @@
+import { JobOffer } from "../types/types";
 import { useEffect, useState } from "react";
 
-export const useFetchObject = <T>(url: string) => {
-  const [isData, setIsData] = useState<T>(null!);
+export const useFetchJobOffers  = () => {
+  const [isData, setIsData] = useState<Array<JobOffer>>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
     const FetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/${url}`);
+        const response = await fetch(`http://localhost:5000/`);
 
         if (!response.ok)
           throw new Error(`Connexion impossible à l'API ${response.status}`);
@@ -26,11 +27,11 @@ export const useFetchObject = <T>(url: string) => {
     FetchData();
 
     return () => {
-      setIsData(null!);
+      setIsData([]);
       setIsLoading(true);
       setIsError(false);
     };
-  }, [url]);
+  }, []);
 
   return { isData, isLoading, isError };
 };

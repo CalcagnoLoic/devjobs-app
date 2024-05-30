@@ -16,6 +16,6 @@ jobs:
       - name: Run tests in frontend
         run: |
           cd frontend
-          npm ci --prefix frontend 
+          npm i
           npm run lint  
           npm run test 

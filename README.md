@@ -1,6 +1,8 @@
 # DevJobs app
 
-🛠️ATTENTION AVAILABLE LOCALLY ONLY FOR THE MOMENT 🛠️. The  environment variables (test) for starting the project are given in the section with docker compose. If you have any problems, don't hesitate to open an issue or contact me directly ::smile::
+🛠️ AVAILABLE LOCALLY ONLY FOR THE MOMENT 🛠️. The  environment variables (test) for starting the project are given in the section with docker compose. If you have any problems, don't hesitate to open an issue or contact me directly 😊
+
+
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -16,7 +18,12 @@ If you want to run the project locally, use docker and a code editor, having fir
 
 ## Launching backend  `docker compose`
 
-To connect to the database service, simply write these environment variables to a file named `.env`. This data is dummy data. During the development phase, these variables will no longer be available.
+🛑With docker compose, locally, the database is persisted but not made available on github. 🛑 
+
+To access the data in the database, you'll find a file called `data.sql` in the backend folder. 
+To use it, start docker compose and connect to the Adminer service at http://localhost:8080/. 
+
+To connect to the database service, simply write these environment variables to a file named `.env`. These variables is dummy data. During the development phase, these variables will no longer be available.
 
 ```
 MARIADB_ROOT_PASSWORD=example
@@ -24,6 +31,8 @@ MARIADB_USER=admin@devjobs
 MARIADB_PASSWORD=secretpw
 MARIADB_DATABASE=devjobs
 ```
+
+Once there, on the left, you'll see the “Import” action. All you have to do is select the sql file and your database is ready 😃 
 
 Then you can run this command:
 

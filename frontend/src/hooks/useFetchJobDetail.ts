@@ -1,8 +1,7 @@
-import { JobOffer } from "../types/types";
 import { useEffect, useState } from "react";
 
-export const useFetch = (url: string) => {
-  const [isData, setIsData] = useState<Array<JobOffer>>([]);
+export const useFetchJobDetail = <T>(url: string) => {
+  const [isData, setIsData] = useState<T>(null!);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
 
@@ -27,7 +26,7 @@ export const useFetch = (url: string) => {
     FetchData();
 
     return () => {
-      setIsData([]);
+      setIsData(null!);
       setIsLoading(true);
       setIsError(false);
     };

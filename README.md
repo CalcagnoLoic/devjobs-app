@@ -1,6 +1,7 @@
 # DevJobs app
 
-🛠️ATTENTION AVAILABLE LOCALLY ONLY FOR THE MOMENT 🛠️. The  environment variables (test) for starting the project are given in the section with docker compose. If you have any problems, don't hesitate to open an issue or contact me directly ::smile::
+🛠️ AVAILABLE LOCALLY ONLY FOR THE MOMENT 🛠️. The  environment variables (test) for starting the project are given in the section with docker compose. If you have any problems, don't hesitate to open an issue or contact me directly 😊
+
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -16,7 +17,12 @@ If you want to run the project locally, use docker and a code editor, having fir
 
 ## Launching backend  `docker compose`
 
-To connect to the database service, simply write these environment variables to a file named `.env`. This data is dummy data. During the development phase, these variables will no longer be available.
+🛑With docker compose, locally, the database is persisted but not made available on github. 🛑 
+
+To access the data in the database, you'll find a file called `data.sql` in the backend folder. 
+To use it, start docker compose and connect to the Adminer service at http://localhost:8080/. 
+
+To connect to the database service, simply write these environment variables to a file named `.env` at the root of backend folder. These variables is dummy data. During the development phase, these variables will no longer be available.
 
 ```
 MARIADB_ROOT_PASSWORD=example
@@ -28,15 +34,25 @@ MARIADB_DATABASE=devjobs
 Then you can run this command:
 
 ```cmd
-$ docker compose up
+docker compose up
 ```
+
+️👨‍🔧️ ***WARNING***, it is possible that the backend service crashes on first execution with this message 👨‍🔧
+
+```
+️backend-1   | sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'database' ([Errno 111] Connection refused)")
+```
+
+👨‍🔧If so, just restart the service from docker desktop. 👨‍🔧
+
+Once all services are up and running, return to adminer and log in with MARIADB data. On the left, you'll see the “Import” action. All you have to do is select the sql file and your database is ready! 🥳 
 
 ## Launching frontend with vite
 
 ```cmd
-$ cd frontend
-$ npm i
-$ npm run dev
+cd frontend
+npm i
+npm run dev
 ```
 
 ## User stories
@@ -56,10 +72,10 @@ Your users should be able to:
 - Semantic HTML5 markup
 - TailwindCSS
 - React-TS
-- Storybook
+- Storybook 7.x
 - Chromatic
-- Python - Flask
-- Docker
+- Python 3.12 - Flask
+- Docker 4.30
 
 ## Authors
 

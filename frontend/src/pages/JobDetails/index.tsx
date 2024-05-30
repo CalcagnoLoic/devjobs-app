@@ -1,5 +1,5 @@
 import { JobOffer } from "../../types/types";
-import { useFetchObject } from "../../hooks/useFetchObject";
+import { useFetchJobDetail } from "../../hooks/useFetchJobDetail";
 import { useParams } from "react-router-dom";
 
 import Header from "../../components/Header/index";
@@ -10,7 +10,7 @@ import LayoutContainer from "../../layout/LayoutContainer";
 
 const Page = () => {
   const { JobId } = useParams();
-  const { isData: datas } = useFetchObject<JobOffer>(`job-detail/${JobId}`);
+  const { isData: datas } = useFetchJobDetail<JobOffer>(`job-detail/${JobId}`);
 
   return (
     <div>

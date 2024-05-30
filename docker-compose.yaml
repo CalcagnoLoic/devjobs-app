@@ -13,7 +13,7 @@ services:
   database:
     image: mariadb
     env_file:
-      - .env
+      - ./backend/.env
     volumes:
       - ./data/mysql:/var/lib/mysql
     ports:

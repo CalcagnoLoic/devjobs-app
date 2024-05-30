@@ -18,6 +18,6 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - run: cd frontend && npm ci
+      - run: cd frontend && npm ci --prefix frontend
       - run: cd frontend && npm run lint
       - run: cd frontend && npm run test

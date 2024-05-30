@@ -2,6 +2,8 @@ name: Continuous integration devjobs
 
 on:
   pull_request:
+    paths:
+      - 'frontend/**'
     branches:
       - main
 
@@ -16,6 +18,6 @@ jobs:
           node-version: "$(cat .nvmrc)"
           cache: "npm"
 
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
+      - run: cd frontend && npm ci
+      - run: cd frontend && npm run lint
+      - run: cd frontend && npm run test

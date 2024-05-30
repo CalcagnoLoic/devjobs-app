@@ -14,7 +14,7 @@ export const useConvertedColor = (hexValue: string) => {
       const hexColor = convertHSLtoHex({ hue, saturation, lightness });
       setConvertedColor(hexColor);
     }
-  }, []);
+  }, [hexValue]);
 
   return convertedColor;
 };
